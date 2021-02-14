@@ -1,8 +1,17 @@
+import WbnPlayer from './WbnPlayer';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import GlobalStyle from '../styles/GlabalStyle';
 const App = () => {
   return (
-    <div>
-      <h1>Start Here!</h1>
-    </div>
+    <Router>
+      <>
+        <GlobalStyle />
+        <Switch>
+          <Route exact path='/' component={WbnPlayer} />
+          <Route exact path='/:activeVideo' component={WbnPlayer} />
+        </Switch>
+      </>
+    </Router>
   );
 };
 
